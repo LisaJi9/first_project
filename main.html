@@ -80,8 +80,42 @@
   </ul>
 </div>
 
+<div class="slide-overlay">
+  <button class="close-btn">close</button>
+<!--  <button class="slide-btn &#45;&#45;prev">-->
+<!--    prev-->
+<!--  </button>-->
+<!--  <button class="slide-btn &#45;&#45;next">-->
+<!--    next-->
+<!--  </button>-->
+  <div class="slide__container">
+    <ul class="slides">
+      <li><img src="" alt="이미지1"></li>
+      <li><img src="" alt="이미지2"></li>
+      <li><img src="" alt="이미지3"></li>
+      <li><img src="" alt="이미지4"></li>
+      <li><img src="" alt="이미지5"></li>
+      <li><img src="" alt="이미지6"></li>
+    </ul>
+  </div>
+</div>
+
 <script>
   const thumbnails = document.querySelectorAll(".box__gallery > li");
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", (e) => {
+      e.preventDefault();
+      overlay.style.display = "block";
+      // 썸네일 원본 사진과 갤러리 슬라이드 이미지 소스 링크 연결
+      for (let i = 0; i < thumbnails.length; i++) {
+        let photo = thumbnails[i].lastElementChild;
+        slidePhoto[i].src = photo.href;
+      }
+    });
+  });
+  document.querySelector(".close-btn").addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
 </script>
 </body>
 </html>
