@@ -8,13 +8,17 @@
       text-align: center;
     }
 
-    .dog {
+    .box__gallery {
       img {
         width: 300px;
         height: 300px;
       }
       h1 {
         text-align: center;
+      }
+
+      li {
+        float:left;
       }
     }
 
@@ -35,26 +39,49 @@
   </p>
 </div>
 <div class="gallery">
-  <div class = "dog">
+  <ul class = "box__gallery">
     <h1>강아지 갤러리</h1>
-    <a href="#"><img src = "https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg" alt="dog1"></a>
+    <li>
+    <a href="https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg" alt="dog1" ></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2017/07/25/12/57/dog-2537958_1280.jpg" alt="dog2"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2018/05/17/06/22/dog-3407906_1280.jpg" alt="dog3"></a>
-    <a href="#"> <img src = "https://cdn.pixabay.com/photo/2019/06/25/18/22/puppy-4298752_1280.jpg" alt="dog4"></a>
+    </li>
+    <li>
+    <a href="#"><img src = "https://cdn.pixabay.com/photo/2019/06/25/18/22/puppy-4298752_1280.jpg" alt="dog4"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2019/10/28/04/21/puppy-4583450_1280.jpg" alt="dog5"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2018/05/27/22/31/dog-3434802_1280.jpg" alt="dog6"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2018/02/11/13/02/cute-3145748_1280.jpg" alt="dog7"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2021/01/25/01/35/flying-dog-5946987_1280.jpg" alt="dog8"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2018/09/24/09/53/spitz-3699479_1280.jpg" alt="dog9"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2019/10/29/08/00/dog-4586318_1280.jpg" alt="dog10"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2019/09/24/10/12/puppy-4500926_1280.jpg" alt="dog11"></a>
+    </li>
+    <li>
     <a href="#"><img src = "https://cdn.pixabay.com/photo/2020/04/03/02/06/if-you-4997202_1280.jpg" alt="dog12"></a>
-    </div>
+    </li>
+  </ul>
 </div>
 
-
-
-
-
+<script>
+  const thumbnails = document.querySelectorAll(".box__gallery > li");
+</script>
 </body>
 </html>
