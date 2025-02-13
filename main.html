@@ -119,12 +119,14 @@
       for (let i = 0; i < thumbnails.length; i++) {
         let photo = thumbnails[i].lastElementChild;
         slidePhoto[i].src = photo.href;
+        console.log(photo);
       }
     });
   });
   document.querySelector(".close-btn").addEventListener("click", () => {
     overlay.style.display = "none";
   });
+
 
 
 </script>
