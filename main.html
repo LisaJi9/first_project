@@ -124,6 +124,19 @@
     overlay.style.display = "none";
   });
 
+  let slides = document.querySelectorAll(".slides > li");
+  const slide = document.querySelector(".slides");
+
+  slides.forEach((slide, index) => {
+    const a = document.createElement("a");
+    a.setAttribute("href", "#");
+    // 이미지의 index를 a의 html에 집어넣음
+    a.innerHTML = `${index}`;
+    const li = document.createElement("li");
+    li.appendChild(a);
+  });
+
+
 
 
 
