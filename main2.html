@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>first_project_2</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- XEIcon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+<div class="container">
+  <div class="img-popup">
+    <div class="popup-inner">
+      <img src="https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg" alt="이미지1">
+      <a href="#" class="close-btn"><span class="blind">팝업창 닫기</span></a>
+    </div>
+  </div>
+
+<div class="item-box">
+  <ul class = "item-img">
+    <h1>강아지 갤러리</h1>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg" alt="dog1" ></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2017/07/25/12/57/dog-2537958_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2017/07/25/12/57/dog-2537958_1280.jpg" alt="dog2"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2018/05/17/06/22/dog-3407906_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2018/05/17/06/22/dog-3407906_1280.jpg" alt="dog3"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2019/06/25/18/22/puppy-4298752_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2019/06/25/18/22/puppy-4298752_1280.jpg" alt="dog4"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2019/10/28/04/21/puppy-4583450_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2019/10/28/04/21/puppy-4583450_1280.jpg" alt="dog5"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2018/05/27/22/31/dog-3434802_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2018/05/27/22/31/dog-3434802_1280.jpg" alt="dog6"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2018/02/11/13/02/cute-3145748_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2018/02/11/13/02/cute-3145748_1280.jpg" alt="dog7"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2021/01/25/01/35/flying-dog-5946987_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2021/01/25/01/35/flying-dog-5946987_1280.jpg" alt="dog8"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2018/09/24/09/53/spitz-3699479_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2018/09/24/09/53/spitz-3699479_1280.jpg" alt="dog9"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2019/10/29/08/00/dog-4586318_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2019/10/29/08/00/dog-4586318_1280.jpg" alt="dog10"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2019/09/24/10/12/puppy-4500926_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2019/09/24/10/12/puppy-4500926_1280.jpg" alt="dog11"></a>
+    </li>
+    <li>
+      <a href="https://cdn.pixabay.com/photo/2020/04/03/02/06/if-you-4997202_1280.jpg"><img src = "https://cdn.pixabay.com/photo/2020/04/03/02/06/if-you-4997202_1280.jpg" alt="dog12"></a>
+    </li>
+  </ul>
+</div>
+
+  <script>
+    $(function(){
+      // 변수 선언
+      var imageButton = $('.item-box .item-img a');
+      var popup = $('.img-popup');
+      var closeButton = popup.find('> .popup-inner > .close-btn');
+      var htmlAndBody = $('html, body');
+      var focusTarget;
+
+      // 팝업 생성
+      imageButton.on('click', function(e){
+        e.preventDefault();
+        var popupImg = popup.find('> .popup-inner > img');
+        var image = $(this).find('> img');
+        var src = image.attr('src');
+        var alt = image.attr('alt');
+        focusTarget = $(this);
+        popupImg.attr('src', src).attr('alt', alt);
+        createPopup();
+      });
+
+      // 팝업 제거
+      popup.on('click', function(){
+        removePopup();
+      });
+      closeButton.on('click', function(e){
+        e.preventDefault();
+        removePopup();
+      });
+
+      // 팝업창 검은배경과 닫기 버튼을 제외한 나머지 부분 클릭시 닫히지 않도록 하기
+      popup.find('> .popup-inner').on('click', function(e){
+        e.stopPropagation();
+      })
+
+      // 팝업 생성 함수
+      function createPopup(){
+        popup.addClass('active');
+        htmlAndBody.css('overflow-y', 'hidden');
+        setTimeout(function(){
+          closeButton.focus();
+        }, 50);
+      }
+      // 팝업 제거 함수
+      function removePopup(){
+        popup.removeClass('active');
+        focusTarget.focus();
+        htmlAndBody.css('overflow-y', 'visible');
+      }
+    })
+      </script>
+</body>
+</html>

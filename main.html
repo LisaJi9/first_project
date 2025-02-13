@@ -38,6 +38,9 @@
     <br>
   </p>
 </div>
+
+
+
 <div class="gallery">
   <ul class = "box__gallery">
     <h1>강아지 갤러리</h1>
@@ -83,12 +86,6 @@
 <!--팝업창-->
 <div class="slide-overlay">
   <button class="close-btn">close</button>
-<!--  <button class="slide-btn &#45;&#45;prev">-->
-  <!--    prev-->
-<!--  </button>-->
-<!--  <button class="slide-btn &#45;&#45;next">-->
-<!--    next-->
-<!--  </button>-->
   <div class="slide__container">
     <ul class="slides">
       <li><img src="" alt="이미지1"></li>
@@ -109,9 +106,9 @@
 
 <script>
 
-  const thumbnails = document.querySelectorAll(".box__gallery > li"); // 12개
+  const thumbnails = document.querySelectorAll(".box__gallery > li");
   const overlay = document.querySelector(".slide-overlay");
-  let slidePhoto = document.querySelectorAll(".slides > li>img"); // 6개
+  let slidePhoto = document.querySelectorAll(".slides > li>img");
 
   thumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener("click", (e) => {
@@ -120,13 +117,14 @@
       for (let i = 0; i < thumbnails.length; i++) {
         let photo = thumbnails[i].lastElementChild;
         slidePhoto[i].src = photo.href;
-        console.log(photo);
       }
     });
   });
   document.querySelector(".close-btn").addEventListener("click", () => {
     overlay.style.display = "none";
   });
+
+
 
 
 
