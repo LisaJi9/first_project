@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie</title>
+  <style>
+    img {float:left; margin-right: 30px}
+    p {float: right;}
+  </style>
+</head>
+<body>
+  <a href="https://resizing.flixster.com/bFGdvC1cnzawwzi7fxhJv6YtoiA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28886_p_v8_al.jpg">
+    <img src="https://resizing.flixster.com/bFGdvC1cnzawwzi7fxhJv6YtoiA=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28886_p_v8_al.jpg" alt="바닐라 스카이">
+  </a>
+  <p class="right_side">
+    <h1>바닐라 스카이</h1>
+    <h2>개요</h2>
+    미스터리 | 미국 | 135분 | 2001.12.21 개봉<br>
+    <h2>감독</h2>
+    카메론 크로우
+    <h2>출연</h2>
+    톰 크루즈, 페넬로페 크루즈, 카메론 디아즈 <br>
+  <br>
+  <br>
+  </p>
+
+  <form action="전송 서버" method="post">
+
+  <label for="nickname">닉네임</label>
+  <input id="nickname_1" type="text" name="id" placeholder="닉네임 입력"><br><br>
+
+  <label for="password_1">비밀번호:</label>
+  <input id="password_1" type="password" name="pwd" placeholder="비밀번호 입력 "><br><br>
+
+  <h2>영화 평점</h2>
+  5점:<input type="radio" name="영화 평점" value="5점">
+  4점:<input type="radio" name="영화 평점" value="4점">
+  3점:<input type="radio" name="영화 평점" value="3점">
+  2점:<input type="radio" name="영화 평점" value="2점">
+  1점:<input type="radio" name="영화 평점" value="1점"><br><br>
+
+  <h2>어떤 점이 맘에 들었나요?(중복 선택 가능)</h2>
+  연출:<input type="checkbox" name="좋은 점" value="연출">
+  연기:<input type="checkbox" name="좋은 점" value="연기">
+  영상미:<input type="checkbox" name="좋은 점" value="영상미">
+  OST:<input type="checkbox" name="좋은 점" value="OST"><br><br>
+
+  <label for="한 줄 평_1"><h2>한줄평</h2></label>
+  <textarea id="한 줄 평_1" type="text" name="한 줄 평" cols="50" rows="3"
+            placeholder="감상평을 남겨주세요."></textarea>
+
+  <h2>감상평에 스포일러가 포함되어 있나요?</h2>
+    <label for="예_1">예:</label>
+    <input id="예_1" type="checkbox" name="예" value="예">
+    <label for="아니요">아니요:</label>
+    <input id="아니요_1" type="checkbox" name="아니요" value="아니요"><br><br>
+
+    <input type="submit">
+  </form>
+
+
+
+</body>
+</html>
