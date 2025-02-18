@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Collection</title>
+  <style>
+    body {
+      background-color: #1a202c;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background-color: #2d3748;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+    .card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card h2 {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .card p {
+      font-size: 1em;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #4a5568;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #718096;
+    }
+  </style>
+</head>
+<body>
+<h1>Movie Collection</h1>
+<div class="container">
+  <div class="card">
+    <img src="https://resizing.flixster.com/2HAZD3mRXq8DSdsOvBiGf5Kn8HI=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7825626_p_v10_ae.jpg" alt="Inception">
+    <div class="card-content">
+      <h2>Inception (2010)</h2>
+      <p>A thief who enters the dreams of others to steal their secrets.</p>
+      <button class="button">More Info</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://resizing.flixster.com/7c3qnZfPzZgID7Ft97PccFwEf9U=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg" alt="Interstellar">
+    <div class="card-content">
+      <h2>Interstellar (2014)</h2>
+      <p>A group of explorers travel through a wormhole in space.</p>
+      <button class="button">More Info</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://resizing.flixster.com/dJM7TJzf7qEp9NA2Kni0Cug9myc=/206x305/v2/https://resizing.flixster.com/Wg25mLoPWxjcxXzNyaSF4VGgGE4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZiNjZiNWFkLWVhNzEtNDRhMC1iNGIwLTFmY2FkNzllNTJlMi5qcGc=" alt="The Dark Knight">
+    <div class="card-content">
+      <h2>The Dark Knight (2008)</h2>
+      <p>Batman faces the Joker in a battle for Gotham's soul.</p>
+      <button class="button">More Info</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
