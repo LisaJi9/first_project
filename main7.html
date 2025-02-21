@@ -5,9 +5,7 @@
   <title>main7</title>
 </head>
 <style>
-  h1 {text-align: center;}
-  p {text-align: center;}
-  h3 {text-align: center;}
+  .introduction {text-align: center;}
 
   .blind {overflow: hidden; position: absolute; width: 1px; height: 1px; font-size: 12px; clip: rect(1px, 1px, 1px, 1px);}
   .container {max-width: 2000px; margin: 0 auto;}
@@ -52,6 +50,7 @@
     <br>
     <br>
     <br>
+  <h1>강아지 갤러리</h1>
   </p>
 </div>
 
@@ -69,7 +68,7 @@
     </div>
   </div>
 
-  <h1>강아지 갤러리</h1>
+
   <div class="item-box">
     <div class="item-img">
       <a href="#"><img src="https://cdn.pixabay.com/photo/2020/05/06/10/34/puppy-5137100_1280.jpg" alt="이미지1"></a>
@@ -106,7 +105,7 @@
     const closeButton = popup.querySelector('.close-btn'); // 닫기 버튼
     let focusTarget; // 팝업 닫을 때 포커스 복귀 대상
 
-    // 🔹 팝업 열기 함수
+    // 팝업 열기 함수
     function openPopup(event) {
       event.preventDefault();
       focusTarget = event.currentTarget; // 클릭한 이미지 저장
@@ -118,14 +117,14 @@
       setTimeout(() => closeButton.focus(), 50); // 닫기 버튼으로 포커스 이동
     }
 
-    // 🔹 팝업 닫기 함수
+    // 팝업 닫기 함수
     function closePopup() {
       popup.classList.remove('active');
       document.body.style.overflow = ''; // 스크롤 복구
       if (focusTarget) focusTarget.focus(); // 원래 클릭했던 곳으로 포커스 이동
     }
 
-    // 🔹 이벤트 리스너 추가
+    // 이벤트 리스너 추가
     imageButtons.forEach(button => button.addEventListener('click', openPopup));
     popup.addEventListener('click', closePopup);
     closeButton.addEventListener('click', function (e) {
@@ -133,12 +132,12 @@
       closePopup();
     });
 
-    // 🔹 팝업 내부 클릭 시 닫히지 않도록 설정
+    // 팝업 내부 클릭 시 닫히지 않도록 설정
     popup.querySelector('.popup-inner').addEventListener('click', function (e) {
       e.stopPropagation();
     });
 
-    // 🔹 ESC 키로 닫기 기능 추가
+    // ESC 키로 닫기 기능 추가
     document.addEventListener('keydown', function (e) {
       if (e.key === "Escape" && popup.classList.contains('active')) {
         closePopup();
