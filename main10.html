@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영화 리뷰 사이트</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+    .movie-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .movie { border: 1px solid #ddd; padding: 10px; width: 200px; cursor: pointer; }
+    .movie img { width: 100%; height: auto; }
+    #movie-detail { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+<h1>영화 리뷰</h1>
+<div class="movie-list" id="movieList"></div>
+
+<div id="movie-detail">
+  <h2 id="movie-title"></h2>
+  <img id="movie-image" src="" alt="영화 포스터">
+  <p id="movie-description"></p>
+  <button onclick="closeDetail()">닫기</button>
+</div>
+
+<script>
+  const movies = [
+    { title: "인셉션", image: "https://resizing.flixster.com/2HAZD3mRXq8DSdsOvBiGf5Kn8HI=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7825626_p_v10_ae.jpg", description: "꿈 속의 꿈을 탐험하는 이야기" },
+    { title: "인터스텔라", image: "https://resizing.flixster.com/7c3qnZfPzZgID7Ft97PccFwEf9U=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg", description: "우주의 신비를 탐험하는 SF 영화" },
+    { title: "다크 나이트", image: "https://resizing.flixster.com/dJM7TJzf7qEp9NA2Kni0Cug9myc=/206x305/v2/https://resizing.flixster.com/Wg25mLoPWxjcxXzNyaSF4VGgGE4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZiNjZiNWFkLWVhNzEtNDRhMC1iNGIwLTFmY2FkNzllNTJlMi5qcGc=", description: "배트맨과 조커의 대결" },
+    { title: "아바타", image: "https://resizing.flixster.com/soS-Taq6hWYBjGYiZ9q98MGMw8U=/206x305/v2/https://resizing.flixster.com/f0bXqQUdQ0m6fyqZjI1OXSEia9E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzEzYmY3ZmZiLWMzYjEtNDQxMy05NTAxLTc2YTRlNmE3NWY2MC5qcGc=", description: "판도라 행성에서 벌어지는 모험" },
+    { title: "어벤져스", image: "https://resizing.flixster.com/OD7TJsjRK-ad5eEMZq37OBaXguE=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10745606_p_v13_bh.jpg", description: "슈퍼히어로들이 함께하는 전투" },
+    { title: "타이타닉", image: "https://resizing.flixster.com/JBp0dumCJw-ln_HfI4rqvXOagG4=/206x305/v2/https://resizing.flixster.com/j1q6PHK0ZtbdABMQcflU-wH5-eE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y1NGZmNWMyLTczMGUtNDViMS04NzdmLTRiODZiMDM0YWMwOS5qcGc=", description: "잊지 못할 로맨스와 비극" },
+    { title: "포레스트 검프", image: "https://resizing.flixster.com/zZCVxTj9dWokzMMyqzV63YcNDHk=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/NowShowing/3509/3509_aa.jpg", description: "한 남자의 감동적인 인생 이야기" }
+  ];
+
+  function displayMovies() {
+    const movieList = document.getElementById("movieList");
+    movies.forEach((movie, index) => {
+      const movieDiv = document.createElement("div");
+      movieDiv.classList.add("movie");
+      movieDiv.innerHTML = `<img src="${movie.image}" alt="${movie.title}"><h3>${movie.title}</h3>`;
+      movieDiv.addEventListener("click", () => showDetail(index));
+      movieList.appendChild(movieDiv);
+    });
+  }
+
+  function showDetail(index) {
+    const movie = movies[index];
+    document.getElementById("movie-title").textContent = movie.title;
+    document.getElementById("movie-image").src = movie.image;
+    document.getElementById("movie-description").textContent = movie.description;
+    document.getElementById("movie-detail").style.display = "block";
+  }
+
+  function closeDetail() {
+    document.getElementById("movie-detail").style.display = "none";
+  }
+
+  displayMovies();
+</script>
+</body>
+</html>
